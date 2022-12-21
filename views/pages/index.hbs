@@ -1,0 +1,38 @@
+{{!-- <main class="container">
+  <h1>LocalMedia❤️</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          <button class="rounded" role="button"><span>+</span></button>
+        </th>
+      </tr>
+
+    </thead>
+    <tbody>
+      {{#each dirs}}
+        <tr>
+          <td>
+            {{this}}
+          </td>
+          <td>
+            Delete
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</main> --}}
+<main>
+  <h1>LocalMedia❤️</h1>
+  <ul class="tree-view">
+    <li>Folders</li>
+    {{> branch tree}}
+  </ul>
+  <button data-folder data-path="{{tree.path}}" style="margin-top: 10px">
+    <span>Create</span>
+  </button>
+</main>

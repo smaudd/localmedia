@@ -1,0 +1,44 @@
+<ul>
+  {{#each this.children}}
+    <li>
+      {{!-- <li>{{this.name}}</li> --}}
+      {{#if this.children.length includeZero=true }}
+        <details>
+          <summary data-path={{this.path}}>
+            <div>
+                <img src="/images/folder.webp" />
+                {{this.name}}
+            </div>
+            <div>
+            <button data-folder data-path="{{this.path}}">
+                <span>Folder</span>
+            </button>
+            <button>
+                <span>Files</span>
+                <input type="file" data-path="{{this.path}}" multiple/>
+            </button>
+            <button data-folder-delete data-path="{{this.path}}">
+                <span>Delete</span>
+            </button>
+            </div>
+        </summary>
+          {{>branch this}}
+        </details>
+      {{else}}
+      <div class="flex justify-between items-center gap-5">
+        {{#if (isImage this.path) }}
+            <img width="48" height="48" style="object-fit: cover" loading="lazy" src={{ concatURIParsedPath '/data/' this.path }} />
+            {{else}}
+            <div></div>
+        {{/if}}
+        <div class="flex justify-end gap-5">
+        <a href={{ concatURIParsedPath '/data/' this.path }}>{{this.name}}</a>
+        <button data-item-delete data-path="{{this.path}}">
+            <span>Delete</span>
+        </button>
+        </div>
+      </div>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

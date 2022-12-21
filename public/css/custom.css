@@ -1,0 +1,141 @@
+@import url('./decorators.css');
+
+h1 {
+    font-size: 1rem;
+}
+
+* {
+    /* color: gray!important; */
+}
+
+body {
+    padding-bottom: 30px;
+    color: black;
+}
+
+button {
+    color: black!important;
+}
+
+a {
+    color: black!important;
+}
+
+a:visited {
+    color: black!important;
+
+}
+
+li {
+    font-size: 1rem;
+}
+
+footer {
+    position: fixed;
+    padding: 5px;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+}
+
+button > span {
+    pointer-events: none;
+}
+
+ul.tree-view details>summary:before {
+    content: ''!important;
+    display: none;
+}
+
+ul.tree-view ul {
+    margin-top: 1rem;
+}
+
+summary {
+    cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+
+summary {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+summary > div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: bold;
+}
+
+summary > div > img {
+    width: 32px;
+    height: 26px;
+}
+
+button > span {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+summary > div > button {
+    padding: 0;
+    min-width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1px;
+    position: relative;
+}
+
+summary > button > span {
+    pointer-events: none;
+}
+
+summary > div > button input[type=file] {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+summary::marker {
+   content: "";
+   display: none;
+
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal > div {
+    z-index: 2;
+}
+
+.modal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: .5;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
